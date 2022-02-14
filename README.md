@@ -8,3 +8,9 @@ One can find, for example, the sum, min, or max of a given range ``[l,r]`` where
 
 ### Point Update
 One can update a definite value of the array. In some languages like C, adopting the unit cost model, updating an array value takes O(1) time. But even though accessing a value and updating it might take constant time, we might need to do a range query again with the new value if the range contains it. This turns out to be O(n) again by the usual way which is inefficient. The segment tree structure allows us to do both range query and update in O(logn) time.
+
+
+### Internal Structure
+We first define nmax to be the maximum size of the array. We then take n (the length of the array) as input and build the segment tree. Building the tree takes O(nlogn) time. But after that, we are able to perform queries and updates in O(logn) time.
+
+The segment tree is a binary tree, where each node represents a given range of the array. 
