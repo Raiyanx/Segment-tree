@@ -1,6 +1,6 @@
 # Segment-tree
 
-Segment tree is one of well known advanced strutures used for queries and point updates to an array. Given an array, one can perform who operations both of which take O(logn) time where n is the length of the array. As we shall see, using Lazy segment tree and Persistent segment tree we are able to acomplish a lot more. But let us go through the basics of Segment tree for now.
+Segment tree is one of well known advanced strutures used for queries and point updates to an array. Given an array, one can perform two operations both of which take O(logn) time where n is the length of the array. As we shall see, using Lazy segment tree and Persistent segment tree we are able to acomplish a lot more. But let us go through the basics of Segment tree for now.
 
 ### Range Query
 One can find, for example, the sum, min, or max of a given range ``[l,r]`` where ``1 <= l <= r <= n``. Usually, just by going through all the values, one can find the range query is O(n) time. Even though this might not seem bad, if there involves a lot of queries, this quickly turns out too much for the computer to handle. The Segment tree enables one to execute a range query in O(logn) which is indeed a lot faster.
