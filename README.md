@@ -17,7 +17,7 @@ The segment tree is a binary tree, where each node represents a given range of t
 
 
 ### Working Mechanism
-Segment tree is useful for types of problems where we are able to merge two ranges. For example, if we know the sum of ranges ``[l,x]`` and ``[x+1,r]``, then we can know the sum of the range of ``[l,r]`` easily. This also works with gcd, minimum and maximum related problems. And the way segment tree implements this is by first setting the leaves of the tree equal to the elements of the array, and then recursively work upwards to the root by merging two children of a node and storing it in that node. 
+Segment tree is useful for types of problems where we are able to merge two ranges. For example, if we know the sum of ranges ``[l,x]`` and ``[x+1,r]``, then we can know the sum of the range of ``[l,r]`` easily. This also works with gcd, minimum and maximum related problems. And the way segment tree implements this is by first setting the leaves of the tree equal to the elements of the array, and then recursively work upwards to the root by merging two children of a node and storing it in that node. The whole tree is kept in an array tree[] of "nodes" itself. A node is basically a struct which contains information of the range it represents. 
 
 For point updates, we walk down on the tree to the leaf representing that point and after updating it, recursively update each node above it upto the root. Since the height of the tree is O(logn), this takes O(logn) time.
 
