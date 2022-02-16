@@ -25,7 +25,7 @@ void build(int id, int l, int r) /// Builds the segment tree
     build(2*id,l,mid);
     build((2*id)+1, mid+1 , r);
 
-    tree[id]= op( tree[2*id] , tree[(2*id)+1] ) ; /// Op =  operator
+    tree[id]= op( tree[2*id] , tree[(2*id)+1] ) ; /// op =  operator
 
     return;
 }
