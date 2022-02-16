@@ -1,6 +1,6 @@
 # Segment-tree
 
-Segment tree is one of well known advanced strutures used for queries and point updates to an array. Given an array, one can perform two operations both of which take O(logn) time where n is the length of the array. As we shall see, using Lazy segment tree and Persistent segment tree we are able to acomplish a lot more. But let us go through the basics of Segment tree for now.
+Segment tree is one of well known advanced strutures used for queries and point updates to an array. Given an array, one can perform two operations both of which take O(logn) time where n is the length of the array. As we shall see, using Segment tree and Lazy segment tree we are able to acomplish a lot. But let us go through the basics of Segment tree for now.
 
 ### Range Query
 One can find, for example, the sum, min, or max of a given range ``[l,r]`` where ``1 <= l <= r <= n``. Usually, just by going through all the values, one can find the range query is O(n) time. Even though this might not seem bad, if there involves a lot of queries, this quickly turns out too much for the computer to handle. The Segment tree enables one to execute a range query in O(logn) which is indeed a lot faster.
@@ -22,6 +22,12 @@ Segment tree is useful for types of problems where we are able to merge two rang
 For point updates, we walk down on the tree to the leaf representing that point and after updating it, recursively update each node above it upto the root. Since the height of the tree is O(logn), this takes O(logn) time.
 
 For range queries, we find the result recursively. Let us assume that we need to find a query on the range ``[l,r]``. We call the query function on the root. Then, whenever we find a node describing the range ``[l1,r1]``, if it is inside ``[l,r]``, we take the value in the node instead of going downwards. If it is outside, we return the identity value. Otherwise, we divide ``[l1,r1]`` into two by calling the function on the children and then recursively compute it. This working mechanism turns out to be O(logn). 
+
+
+## Lazy Segment Tree
+A regular segment tree allows us to perform range queries and point updates. But what if we want to perform range updates? If the range is of size $m$, then it would take O(mlogn) time to update all of them using just regular segment tree. This turns out to be very bad when we are dealing with a lot of queries. 
+
+Turns out, we are able to perform range updates too in O(logn) time. And the way to do it would be lazy segment tree. 
 
 
 
