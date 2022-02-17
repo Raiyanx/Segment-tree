@@ -3,7 +3,7 @@
 Segment tree is one of well known advanced strutures used for queries and point updates to an array. Given an array, one can perform two operations both of which take O(logn) time where n is the length of the array. Using Segment tree and Lazy segment tree we are able to acomplish a lot.
 
 ### Range Query
-One can find, for example, the sum, min, or max of a given range ``[l,r]`` where ``1 <= l <= r <= n``. Usually, just by going through all the values, one can find the range query is O(n) time. Even though this might not seem bad, if there involves a lot of queries, this quickly turns out too much for the computer to handle. The Segment tree enables one to execute a range query in O(logn) which is indeed a lot faster.
+One can find, for example, the sum, min, or max of a given range ``[l,r]`` where ``1 <= l <= r <= n``. Usually, just by going through all the values, one can find the range query in O(n) time. Even though this might not seem bad, if there involves a lot of queries, this quickly turns out too much for the computer to handle. The Segment tree enables one to execute a range query in O(logn) which is indeed a lot faster.
 
 
 ### Point Update
@@ -27,7 +27,7 @@ For range queries, we find the result recursively. Let us assume that we need to
 ## Lazy Segment Tree
 A regular segment tree allows us to perform range queries and point updates. But what if we want to perform range updates? If the range is of size m, then it would take O(mlogn) time to update all of them using just regular segment tree. This turns out to be very bad when we are dealing with a lot of queries. 
 
-Turns out, we are able to perform range updates too in O(logn) time. And the way to do it would be lazy segment tree. In a lazy segment tree, it performs the range update "lazily". Each node in the array tree[] now has a corresponding entry in the array lazy[]. And whenever we perform a range update, say we want to update a range ``[l,r]`` which has a corresponding single node with index n. Then instead of trying to update the full range, we rather store the lazy value in ``lazy[n]``. This allows us to perform the range update and also the range query in O(logn) time. 
+Turns out, we are able to perform range updates too in O(logn) time. And the way to do it would be lazy segment tree. In a lazy segment tree, it performs the range update "lazily". Each node in the array tree[] now has a corresponding entry in the array lazy[]. And whenever we perform a range update, say we want to update a range ``[l,r]`` which has a corresponding single node with index n. Then instead of trying to update the nodes under that node, we rather store the lazy value in ``lazy[n]``. And if it isnt a single node, we can divide and work recursively. This allows us to perform the range update and also the range query in O(logn) time. 
 
 
 
