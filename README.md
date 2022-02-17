@@ -25,7 +25,7 @@ For range queries, we find the result recursively. Let us assume that we need to
 
 
 ## Lazy Segment Tree
-A regular segment tree allows us to perform range queries and point updates. But what if we want to perform range updates? If the range is of size $m$, then it would take O(mlogn) time to update all of them using just regular segment tree. This turns out to be very bad when we are dealing with a lot of queries. 
+A regular segment tree allows us to perform range queries and point updates. But what if we want to perform range updates? If the range is of size m, then it would take O(mlogn) time to update all of them using just regular segment tree. This turns out to be very bad when we are dealing with a lot of queries. 
 
 Turns out, we are able to perform range updates too in O(logn) time. And the way to do it would be lazy segment tree. In a lazy segment tree, it performs the range update "lazily". Each node in the array tree[] now has a corresponding entry in the array lazy[]. And whenever we perform a range update, say we want to update a range ``[l,r]`` which has a corresponding single node with index n. Then instead of trying to update the full range, we rather store the lazy value in ``lazy[n]``. This allows us to perform the range update and also the range query in O(logn) time. 
 
